@@ -22,7 +22,7 @@ function handleCarouselLogic(){
     sliderObjs.forEach(sliderObj => {
         console.log(sliderObj);
 
-        sliderObj.btn.addEventListener('input', handleRadioChecked);
+        sliderObj.btn.addEventListener('change', handleRadioChecked);
     })
 
     function createSlideObject(slide){
@@ -38,19 +38,24 @@ function handleCarouselLogic(){
     }
 
     function handleRadioChecked(e){
-        // console.log(e.target);
-        // console.log(e.target.dataset.id);
         const sliderObj = sliderObjs.filter(obj => obj.btn === e.target)[0];
-        console.log(sliderObj.slide.offsetLeft);
-        console.log(carsouelSliderContainer.scrollLeft);
 
         carsouelSliderContainer.scrollLeft = sliderObj.slide.offsetLeft;
 
-        //get slider container
+        // console.log(sliderObj.slide.offsetLeft);
+        // console.log(carsouelSliderContainer.scrollLeft);
 
-        //get sliderObj slide scroll location
+    }
 
-        //make slider container scroll to specific slide scroll location
+    setInterval(handleTimer, 1000);
+
+    function handleTimer(){
+        if(carsouelBtns[slidesIndex] === undefined){
+            slidesIndex = 0;
+        }
+        carsouelBtns[slidesIndex].checked = true;
+
+        slidesIndex++;
     }
 
 }
