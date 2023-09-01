@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  height: 100vh;
+  height: 100dvh;
+}
+.section .container {
+  height: 100%;
+}
+.section .content {
+  height: 100%;
+}
+
+.carsouel-component {
+  height: inherit;
+  width: inherit;
+}
+.carsouel-component .content {
+  background-color: rgba(255, 166, 0, 0.516);
+  height: inherit;
+  width: inherit;
+  position: relative;
+}
+.carsouel-component .content .slider-container {
+  height: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-X: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.carsouel-component .content .slider-container .slide {
+  height: inherit;
+  width: inherit;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  align-self: stretch;
+}
+.carsouel-component .content .slider-btns {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4em;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  gap: 1.5em;
+}/*# sourceMappingURL=style.css.map */
