@@ -30,7 +30,8 @@ function handleCarouselLogic(){
         const sliderBtn = carsouelSliderBtnsContainer.querySelector(`input[data-id='${id}']`);
         const obj = {
             slide,
-            btn: sliderBtn
+            btn: sliderBtn,
+            id
         };
 
         return obj;
@@ -39,8 +40,17 @@ function handleCarouselLogic(){
     function handleRadioChecked(e){
         // console.log(e.target);
         // console.log(e.target.dataset.id);
-        const sliderObj = sliderObjs.filter(obj => obj === e.target);
-        console.log(sliderObj);
+        const sliderObj = sliderObjs.filter(obj => obj.btn === e.target)[0];
+        console.log(sliderObj.slide.offsetLeft);
+        console.log(carsouelSliderContainer.scrollLeft);
+
+        carsouelSliderContainer.scrollLeft = sliderObj.slide.offsetLeft;
+
+        //get slider container
+
+        //get sliderObj slide scroll location
+
+        //make slider container scroll to specific slide scroll location
     }
 
 }
