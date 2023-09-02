@@ -1,11 +1,11 @@
 window.addEventListener('load', handleCarouselLogic);
 
-function handleCarouselLogic(){
+function handleCarouselLogic() {
     const carsouelComponent = document.querySelector('#mq-carsouel-component');
     const carsouelContent = carsouelComponent.querySelector('.content');
-    const carsouelSliderContainer= carsouelContent.querySelector('.slider-container');
+    const carsouelSliderContainer = carsouelContent.querySelector('.slider-container');
     const carsouelSlides = carsouelSliderContainer.querySelectorAll('.slide');
-    const carsouelSliderBtnsContainer= carsouelContent.querySelector('.slider-btns');
+    const carsouelSliderBtnsContainer = carsouelContent.querySelector('.slider-btns');
     const carsouelBtns = carsouelSliderBtnsContainer.querySelectorAll("input[name='carousel-btns']");
 
     const sliderObjs = Array.from(carsouelSlides).map(slide => createSlideObject(slide));
@@ -23,9 +23,11 @@ function handleCarouselLogic(){
         console.log(sliderObj);
 
         sliderObj.btn.addEventListener('change', handleRadioChecked);
+        sliderObj.btn.addEventListener('input', handleRadioChecked);
+        sliderObj.btn.addEventListener('click', handleRadioChecked);
     })
 
-    function createSlideObject(slide){
+    function createSlideObject(slide) {
         const id = slide.dataset.id;
         const sliderBtn = carsouelSliderBtnsContainer.querySelector(`input[data-id='${id}']`);
         const obj = {
@@ -37,7 +39,7 @@ function handleCarouselLogic(){
         return obj;
     }
 
-    function handleRadioChecked(e){
+    function handleRadioChecked(e) {
         const sliderObj = sliderObjs.filter(obj => obj.btn === e.target)[0];
 
         carsouelSliderContainer.scrollLeft = sliderObj.slide.offsetLeft;
@@ -47,12 +49,17 @@ function handleCarouselLogic(){
 
     }
 
-    setInterval(handleTimer, 1000);
+    setInterval(handleTimer, 3000);
 
-    function handleTimer(){
-        if(carsouelBtns[slidesIndex] === undefined){
+    function handleTimer() {
+        if (carsouelBtns[slidesIndex] === undefined) {
             slidesIndex = 0;
         }
+
+        const sliderObj = sliderObjs[slidesIndex];
+
+        carsouelSliderContainer.scrollLeft = sliderObj.slide.offsetLeft;
+
         carsouelBtns[slidesIndex].checked = true;
 
         slidesIndex++;
