@@ -1,6 +1,7 @@
 window.addEventListener('load', handleCarouselLogic);
 
 function handleCarouselLogic() {
+    console.log('loaded')
     const carsouelComponent = document.querySelector('#mq-carsouel-component');
     const carsouelContent = carsouelComponent.querySelector('.content');
     const carsouelSliderContainer = carsouelContent.querySelector('.slider-container');
@@ -10,7 +11,7 @@ function handleCarouselLogic() {
 
     const sliderObjs = Array.from(carsouelSlides).map(slide => createSlideObject(slide));
 
-    let slidesIndex = 0;
+    let slidesIndex = 1;
 
     for (var i = 0; i < carsouelBtns.length; i++) {
         if (carsouelBtns[i].checked) {
@@ -20,7 +21,7 @@ function handleCarouselLogic() {
     }
 
     sliderObjs.forEach(sliderObj => {
-        console.log(sliderObj);
+        // console.log(sliderObj);
 
         sliderObj.btn.addEventListener('change', handleRadioChecked);
         sliderObj.btn.addEventListener('input', handleRadioChecked);
@@ -41,11 +42,7 @@ function handleCarouselLogic() {
 
     function handleRadioChecked(e) {
         const sliderObj = sliderObjs.filter(obj => obj.btn === e.target)[0];
-
         carsouelSliderContainer.scrollLeft = sliderObj.slide.offsetLeft;
-
-        // console.log(sliderObj.slide.offsetLeft);
-        // console.log(carsouelSliderContainer.scrollLeft);
 
     }
 
@@ -62,7 +59,12 @@ function handleCarouselLogic() {
 
         carsouelBtns[slidesIndex].checked = true;
 
+        console.log(slidesIndex);
+
         slidesIndex++;
+
+        console.log(slidesIndex);
+        console.log('function ran');
     }
 
 }

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: purple;
+}
+
 .section {
   height: 100vh;
   height: 100dvh;
@@ -33,6 +37,10 @@
   overflow-X: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 .carsouel-component .content .slider-container .slide {
   height: inherit;
@@ -40,6 +48,11 @@
   flex: 0 0 auto;
   scroll-snap-align: center;
   align-self: stretch;
+}
+.carsouel-component .content .slider-container::-webkit-scrollbar {
+  display: none;
+  background-color: yellow;
+  height: none;
 }
 .carsouel-component .content .slider-btns {
   position: absolute;
@@ -53,4 +66,4 @@
   width: fit-content;
   display: flex;
   gap: 1.5em;
-}/*# sourceMappingURL=style.css.map */
+}

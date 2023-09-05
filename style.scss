@@ -1,32 +1,39 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.section{
+html {
+    background-color: purple;
+}
+
+.section {
     height: 100vh;
     height: 100dvh;
 
-    .container{
+    .container {
         height: 100%;
     }
-    .content{
+
+    .content {
         height: 100%;
     }
 }
 
-.carsouel-component{
+.carsouel-component {
     // height: 100%;
     height: inherit;
     width: inherit;
-    .content{
+
+    .content {
         // height: 100%;
         background-color: rgba(255, 166, 0, 0.516);
         height: inherit;
         width: inherit;
         position: relative;
-        .slider-container{
+
+        .slider-container {
             height: inherit;
             width: 100%;
             display: flex;
@@ -34,15 +41,28 @@
             overflow-X: scroll;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
-            .slide{
+
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+
+            .slide {
                 height: inherit;
                 width: inherit;
                 flex: 0 0 auto;
                 scroll-snap-align: center;
                 align-self: stretch;
             }
+
+            &::-webkit-scrollbar {
+                display: none;
+                background-color: yellow;
+                height: none;
+            }
         }
-        .slider-btns{
+
+        .slider-btns {
             position: absolute;
             bottom: 0;
             left: 0;
