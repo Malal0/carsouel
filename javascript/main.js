@@ -13,19 +13,8 @@ function handleCarouselLogic() {
 
     let slidesIndex = 1;
 
-    for (var i = 0; i < carsouelBtns.length; i++) {
-        if (carsouelBtns[i].checked) {
-            console.log("Selected option: " + carsouelBtns[i].value);
-            break;
-        }
-    }
-
     sliderObjs.forEach(sliderObj => {
-        // console.log(sliderObj);
-
-        sliderObj.btn.addEventListener('change', handleRadioChecked);
         sliderObj.btn.addEventListener('input', handleRadioChecked);
-        sliderObj.btn.addEventListener('click', handleRadioChecked);
     })
 
     function createSlideObject(slide) {
@@ -42,11 +31,9 @@ function handleCarouselLogic() {
 
     function handleRadioChecked(e) {
         const sliderObj = sliderObjs.filter(obj => obj.btn === e.target)[0];
+        slidesIndex = sliderObjs.indexOf(sliderObj);
         carsouelSliderContainer.scrollLeft = sliderObj.slide.offsetLeft;
-
     }
-
-    setInterval(handleTimer, 3000);
 
     function handleTimer() {
         if (carsouelBtns[slidesIndex] === undefined) {
@@ -59,12 +46,11 @@ function handleCarouselLogic() {
 
         carsouelBtns[slidesIndex].checked = true;
 
-        console.log(slidesIndex);
-
         slidesIndex++;
 
-        console.log(slidesIndex);
-        console.log('function ran');
+        // console.log(slidesIndex);
+        // console.log('function ran');
     }
 
+    setInterval(handleTimer, 3000);
 }

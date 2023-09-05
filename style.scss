@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-html {
-    background-color: purple;
-}
-
 .section {
     height: 100vh;
     height: 100dvh;
@@ -73,7 +69,6 @@ html {
             width: fit-content;
             display: flex;
             gap: 1.5em;
-
         }
     }
 }

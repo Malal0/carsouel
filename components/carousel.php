@@ -11,7 +11,7 @@
 
     foreach($slidesColor as $slideColor){
         if(array_search($slideColor, $slidesColor) === 0){
-            $btnsHtml = $btnsHtml . "<input class='carousel-btn' type='radio' value='$slideColor' data-id='$slideColor' name='carousel-btns' checked/>";
+            $btnsHtml = $btnsHtml . "<input class='carousel-btn' type='radio' value='$slideColor' data-id='$slideColor' name='carousel-btns' checked />";
         }else{
             $btnsHtml = $btnsHtml . "<input class='carousel-btn' type='radio' value='$slideColor' data-id='$slideColor' name='carousel-btns' />";
         }
