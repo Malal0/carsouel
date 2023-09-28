@@ -15,17 +15,16 @@
   height: 100%;
 }
 
-.carsouel-component {
+.carousel-component {
   height: inherit;
   width: inherit;
 }
-.carsouel-component .content {
-  background-color: rgba(255, 166, 0, 0.516);
+.carousel-component .content {
   height: inherit;
   width: inherit;
   position: relative;
 }
-.carsouel-component .content .slider-container {
+.carousel-component .content .slider-container {
   height: inherit;
   width: 100%;
   display: flex;
@@ -38,19 +37,18 @@
   scrollbar-width: none;
   /* Firefox */
 }
-.carsouel-component .content .slider-container .slide {
+.carousel-component .content .slider-container .slide {
   height: inherit;
   width: inherit;
   flex: 0 0 auto;
   scroll-snap-align: center;
   align-self: stretch;
 }
-.carsouel-component .content .slider-container::-webkit-scrollbar {
+.carousel-component .content .slider-container::-webkit-scrollbar {
   display: none;
-  background-color: yellow;
   height: none;
 }
-.carsouel-component .content .slider-btns {
+.carousel-component .content .slider-btns {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -63,3 +61,22 @@
   display: flex;
   gap: 1.5em;
 }
+.carousel-component .content .slider-btns .carousel-btn {
+  --btn-size: 20px;
+  height: var(--btn-size);
+  width: var(--btn-size);
+  background-color: #FFF;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.carousel-component .content .slider-btns .carousel-btn.current {
+  background-color: #de52d2;
+  opacity: 1;
+}
+.carousel-component .content .slider-btns .carousel-btn:hover.current {
+  opacity: 1;
+}
+.carousel-component .content .slider-btns .carousel-btn:hover {
+  opacity: 0.3;
+}/*# sourceMappingURL=style.css.map */
